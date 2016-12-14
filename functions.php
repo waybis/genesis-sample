@@ -27,7 +27,7 @@ include_once( get_stylesheet_directory() . '/lib/output.php' );
 
 //* Child theme (do not remove)
 define( 'CHILD_THEME_NAME', 'S2' );
-define( 'CHILD_THEME_URL', '<?php echo esc_url(home_url()); ?>/' );
+define( 'CHILD_THEME_URL', 'https://www.sensorsone.com/' );
 define( 'CHILD_THEME_VERSION', '1.0' );
 
 //* Enqueue Scripts and Styles
