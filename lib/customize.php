@@ -20,7 +20,7 @@
  * @return string Hex color code for link color.
  */
 function genesis_sample_customizer_get_default_link_color() {
-	return '#c3251d';
+	return '#0066cc'; /* S1 */
 }
 
 /**
@@ -33,7 +33,7 @@ function genesis_sample_customizer_get_default_link_color() {
  * @return string Hex color code for accent color.
  */
 function genesis_sample_customizer_get_default_accent_color() {
-	return '#c3251d';
+	return '#0066cc'; /* S1 */
 }
 
 add_action( 'customize_register', 'genesis_sample_customizer_register' );
@@ -61,8 +61,8 @@ function genesis_sample_customizer_register() {
 			$wp_customize,
 			'genesis_sample_link_color',
 			array(
-				'description' => __( 'Change the default color for linked titles, menu links, post info links and more.', 'genesis-sample' ),
-			    'label'       => __( 'Link Color', 'genesis-sample' ),
+				'description' => __( 'Change the default color for linked titles, menu links, post info links and more.', 's2' ), /* S1 */
+			    'label'       => __( 'Link Color', 's2' ), /* S1 */
 			    'section'     => 'colors',
 			    'settings'    => 'genesis_sample_link_color',
 			)
@@ -82,8 +82,8 @@ function genesis_sample_customizer_register() {
 			$wp_customize,
 			'genesis_sample_accent_color',
 			array(
-				'description' => __( 'Change the default color for button hovers.', 'genesis-sample' ),
-			    'label'       => __( 'Accent Color', 'genesis-sample' ),
+				'description' => __( 'Change the default color for button hovers.', 's2' ), /* S1 */
+			    'label'       => __( 'Accent Color', 's2' ), /* S1 */
 			    'section'     => 'colors',
 			    'settings'    => 'genesis_sample_accent_color',
 			)
