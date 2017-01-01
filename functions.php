@@ -499,33 +499,5 @@ function related_pages() {
 add_action('genesis_entry_content', 'related_pages');
 
 
-// Remove the Related Posts from the bottom of posts
-function jetpackme_remove_rp() {
-    $jprp = Jetpack_RelatedPosts::init();
-    $callback = array( $jprp, 'filter_add_target_to_dom' );
-    remove_filter( 'the_content', $callback, 40 );
-}
-
-add_filter( 'wp', 'jetpackme_remove_rp', 20 );
-
-
-// Remove category General from Related Posts
-function jetpackme_filter_exclude_category( $filters ) {
-    $filters[] = array( 'not' =>
-      array( 'term' => array( 'category.slug' => 'general' ) )
-    );
-    return $filters;
-}
-
-add_filter( 'jetpack_relatedposts_filter_filters', 'jetpackme_filter_exclude_category' );
-
-
-// Remove nofollow rel attribute from related post links
-function modify_rel_nofollow() {
-    return '';
-}
-
-add_filter( 'jetpack_relatedposts_filter_post_link_rel', 'modify_rel_nofollow');
-
 // Remove genesis_canonical tags to allow control of wp rel_canonical function instead via s1 tools plugin
 remove_action( 'wp_head', 'genesis_canonical', 5 );
